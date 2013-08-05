@@ -97,7 +97,8 @@ function draw(us) {
 		  }
 	      })
 	.attr("d", path)
-	.on("click", clicked);
+	.on("click", clicked)
+	.on("mouseover", function (d) {info_panel(d.id);});
     
     g.append("path")
 	.datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
